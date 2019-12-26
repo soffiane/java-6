@@ -1,0 +1,32 @@
+package chap17;
+
+import javax.swing.*;
+import java.awt.*;
+
+class MaFenetreChap17Layout2 extends JFrame {
+    public static int NBOUTONS = 8;
+
+    public MaFenetreChap17Layout2() {
+        setTitle("Exemple FlowLayout");
+        setSize(350, 180);
+        Container contenu = getContentPane();
+        contenu.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
+        boutons = new JButton[NBOUTONS];
+        int n = 1;
+        for (int i = 0; i < NBOUTONS; i++) {
+            boutons[i] = new JButton("Bouton " + n);
+            n *= 10;
+            contenu.add(boutons[i]);
+        }
+    }
+
+    private JButton boutons[];
+}
+
+public class Layout2 {
+    public static void main(String args[]) {
+        MaFenetreChap17Layout2 fen = new MaFenetreChap17Layout2();
+        fen.setVisible(true);
+    }
+}
+
